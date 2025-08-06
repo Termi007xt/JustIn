@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 export class NewsItem extends Component {
   render() {
-    let { title, description, img, newsUrl } = this.props;
+    let { title, description, img, newsUrl, author, date } = this.props;
     return (
       <div>
         <div className="card text-center border-primary mb-3">
@@ -19,6 +19,12 @@ export class NewsItem extends Component {
           <div className="card-body d-flex flex-column justify-content-between">
             <h5 className="card-title clamp-2">{title}</h5>
             <p className="card-text clamp-2">{description}</p>
+            <p className="card-text">
+              <small className="text-body-secondary">
+                By {!author ? "unknown" : author} on{" "}
+                {new Date(date).toGMTString()}
+              </small>
+            </p>
             <a
               rel="noreferrer"
               href={newsUrl}

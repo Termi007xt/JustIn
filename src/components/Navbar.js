@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 export class Navbar extends Component {
   render() {
@@ -6,9 +7,9 @@ export class Navbar extends Component {
       <>
         <nav className="navbar bg-primary navbar-expand-lg">
           <div className="container-fluid">
-            <a className="navbar-brand" href="/">
+            <Link className="navbar-brand" to="/">
               Navbar
-            </a>
+            </Link>
             <button
               className="navbar-toggler"
               type="button"
@@ -26,50 +27,50 @@ export class Navbar extends Component {
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item dropdown">
-                  <a
+                  <Link
                     className="nav-link dropdown-toggle"
-                    href="/"
+                    to="/"
                     role="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
                     Categories
-                  </a>
+                  </Link>
                   <ul className="dropdown-menu">
                     <li>
-                      <a className="dropdown-item" href="/">
-                        Sports
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="/">
-                        Business
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="/">
-                        Entertainment
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="/">
+                      <Link className="dropdown-item" to="/">
                         General
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="/">
+                      <Link className="dropdown-item" to="/business">
+                        Business
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="/entertainment">
+                        Entertainment
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="/sports">
+                        Sports
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="/health">
                         Health
-                      </a>
+                      </Link>
                     </li>
-                    <li>
-                      <a className="dropdown-item" href="/">
+                    {/* <li>
+                      <Link className="dropdown-item" to="/science">
                         Science
-                      </a>
-                    </li>
+                      </Link>
+                    </li> */}
                     <li>
-                      <a className="dropdown-item" href="/">
+                      <Link className="dropdown-item" to="/technology">
                         Technology
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </li>
