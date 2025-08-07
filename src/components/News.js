@@ -50,56 +50,11 @@ const News = (props) => {
     setHasMore(newArticles.length > 0);
   };
 
-  // handlePrev = async () => {
-  //   props.setProgress(10);
-
-  //   let api = `https://newsapi.org/v2/top-headlines?country=us&category=${
-  //     props.category
-  //   }&apiKey=${props.apiKey}&page=${
-  //     page - 1
-  //   }&pageSize=${props.pageSize}`;
-  //   this.setState({ loading: true });
-  //   let data = await fetch(api);
-  //   let parsedData = await data.json();
-  //   console.log(parsedData);
-  //   this.setState({
-  //     page: page - 1,
-  //     articles: parsedData.articles,
-  //     loading: false,
-  //   });
-  //   props.setProgress(100);
-  // };
-
-  // handleNext = async () => {
-  //   props.setProgress(10);
-
-  //   let api = `https://newsapi.org/v2/top-headlines?country=us&category=${
-  //     props.category
-  //   }&apiKey=${props.apiKey}&page=${
-  //     page + 1
-  //   }&pageSize=${props.pageSize}`;
-  //   this.setState({ loading: true });
-  //   let data = await fetch(api);
-  //   let parsedData = await data.json();
-  //   console.log(parsedData);
-
-  //   this.setState({
-  //     page: page + 1,
-  //     articles: parsedData.articles,
-  //     loading: false,
-  //   });
-  //   props.setProgress(100);
-  // };
-
   return (
     <>
-      <h1 className="text-center my-5">Top Headlines - {props.category}</h1>
-
-      {/* {loading && (
-          <div className="d-flex justify-content-center">
-            <div className="spinner-border text-primary" role="status"></div>
-          </div>
-        )} */}
+      <h1 className="text-center" style={{ marginTop: "80px" }}>
+        Top Headlines - {props.category}
+      </h1>
 
       <InfiniteScroll
         dataLength={articles.length}
@@ -138,32 +93,6 @@ const News = (props) => {
           </div>
         </div>
       </InfiniteScroll>
-
-      {/* {!loading && (
-          <div className="container">
-            <div className="d-grid gap-2 d-md-flex justify-content-between">
-              <button
-                className="btn btn-primary me-md-2 "
-                type="button"
-                onClick={this.handlePrev}
-                disabled={page <= 1}
-              >
-                &larr; Previous
-              </button>
-              <button
-                className="btn btn-primary"
-                type="button"
-                onClick={this.handleNext}
-                disabled={
-                  page >=
-                  Math.ceil(totalResults / props.pageSize)
-                }
-              >
-                Next &rarr;
-              </button>
-            </div>
-          </div>
-        )} */}
     </>
   );
 };
