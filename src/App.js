@@ -6,7 +6,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LoadingBar from "react-top-loading-bar";
 
 class App extends Component {
-  pageSize = 15;
+  apiKey = process.env.REACT_APP_NEWS_API;
+  pageSize = 9;
 
   state = {
     progress: 0,
@@ -33,6 +34,7 @@ class App extends Component {
               element={
                 <News
                   setProgress={this.setProgress}
+                  apiKey={this.apiKey}
                   key="general"
                   pageSize={this.pageSize}
                   category="general"
@@ -45,6 +47,7 @@ class App extends Component {
               element={
                 <News
                   setProgress={this.setProgress}
+                  apiKey={this.apiKey}
                   key="business"
                   pageSize={this.pageSize}
                   category="business"
@@ -57,6 +60,7 @@ class App extends Component {
               element={
                 <News
                   setProgress={this.setProgress}
+                  apiKey={this.apiKey}
                   key="entertainment"
                   pageSize={this.pageSize}
                   category="entertainment"
@@ -69,6 +73,7 @@ class App extends Component {
               element={
                 <News
                   setProgress={this.setProgress}
+                  apiKey={this.apiKey}
                   key="sports"
                   pageSize={this.pageSize}
                   category="sports"
@@ -81,6 +86,7 @@ class App extends Component {
               element={
                 <News
                   setProgress={this.setProgress}
+                  apiKey={this.apiKey}
                   key="health"
                   pageSize={this.pageSize}
                   category="health"
@@ -93,6 +99,7 @@ class App extends Component {
               element={
                 <News
                   setProgress={this.setProgress}
+                  apiKey={this.apiKey}
                   key="technology"
                   pageSize={this.pageSize}
                   category="technology"
@@ -102,7 +109,7 @@ class App extends Component {
             {/* <Route
               exact
               path="/science"
-              element={<News setProgress={this.setProgress} key="science" category="science" />}
+              element={<News setProgress={this.setProgress} apiKey={this.apiKey} key="science" category="science" />}
             /> */}
           </Routes>
         </Router>
